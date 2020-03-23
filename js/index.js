@@ -1,4 +1,5 @@
 $('#wikiSearch').on('click', function () {
+  $("#wikiContent").empty();
 
   //validate input string value cannot be null
 
@@ -16,6 +17,7 @@ $('#wikiSearch').on('click', function () {
 
     $.ajax({
       url: apiUrl + searchString,
+      dataType: "jsonp",
       success: function (data) {
 
         var post = data.query.pages; // Grab Pages from data , check api document to understand 
